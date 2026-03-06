@@ -4,23 +4,34 @@
 
 3D Globe · Live OSINT Feeds · AI Chat · Threat Analysis · Semantic Memory
 
+[![qoOhZrB.md.png](https://iili.io/qoOhZrB.md.png)](https://freeimage.host/i/qoOhZrB)
+
 ---
 
-## What is XANA OS?
+## What the in the world this thing?
 
 XANA OS is a self-hosted, fully offline-capable intelligence dashboard built with Streamlit. It combines:
 
 - **Live global feeds** — real aircraft (OpenSky), vessels (AIS), satellites (CelesTrak)
+
+[![qoOj2BR.md.png](https://iili.io/qoOj2BR.md.png)](https://freeimage.host/i/qoOj2BR)
+
 - **AI-powered chat** — memory-linked conversational AI backed by your own conversation history
 - **OSINT center** — news, cyber threats, IP/domain recon, crypto markets, weather
+
+![qoOjzQf.md.png](https://iili.io/qoOjzQf.md.png)
+
 - **Autonomous investigation** — PHANTOM Protocol multi-source entity analysis
+
+![qoOhQ1V.md.png](https://iili.io/qoOhQ1V.md.png)
+
 - **3D globe** — pydeck-powered multi-layer command center
 
 All data sources are **free and require no API keys** (except optional Windy webcams).
 
 ---
 
-## Tech Stack
+## The Stack (for the technically curious)
 
 | Component | Technology |
 |---|---|
@@ -34,7 +45,7 @@ All data sources are **free and require no API keys** (except optional Windy web
 
 ---
 
-## Setup Guide (Step by Step)
+## Getting Started (yes, it's actually this easy)
 
 ### Quick Start (recommended)
 
@@ -51,7 +62,7 @@ Then open `http://localhost:8501`.
 
 ---
 
-### Step 1 — Prerequisites
+### Step 1 — Two Things You'll Need
 
 - **Python 3.10+**
 - **Ollama** — local LLM runtime ([ollama.com](https://ollama.com))
@@ -92,13 +103,13 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-> The first run downloads the `all-MiniLM-L6-v2` embedding model (~90 MB) automatically when a memory DB is loaded.
+> The first run downloads the `all-MiniLM-L6-v2` embedding model (~90 MB) automatically when a memory DB is loaded. Get a snack.
 
 Open your browser at `http://localhost:8501`.
 
 ---
 
-### Step 4 — Build Your Memory Database (Optional)
+### Step 4 — Build Your Memory Database (Optional but *Chef's Kiss*)
 
 The AI memory system uses your own conversation history. It works best with **ChatGPT conversation exports**, but any structured chat data works.
 
@@ -135,7 +146,7 @@ python legacy/build-brain.py
 
 This embeds all messages using `all-MiniLM-L6-v2` and stores them in `xana_memory_db/`.
 
-> This may take a few minutes depending on the size of your conversation history. CPU-only is fine.
+> This may take a few minutes depending on the size of your conversation history. CPU-only is totally fine.
 
 #### 4e — Restart the App
 
@@ -177,10 +188,10 @@ Edit `config.py` to customize:
 | `GLOBE_DEFAULT_SAT_GROUPS` | stations, starlink, gps, military, weather | Default satellite layers |
 | `AGENT_SAFE_COMMANDS` | see config.py | Allowed shell commands for exec agent |
 
-To use a different LLM (e.g. `mistral`, `qwen2.5`, `gemma3`):
+Switching models is literally one line:
 
 ```python
-LLM_MODEL = "mistral"
+LLM_MODEL = "mistral"   # or qwen2.5, gemma3, deepseek-r1, whatever you like
 ```
 
 ---
@@ -213,7 +224,7 @@ Local LLM (Ollama)  ──►  Grounded, specific answer
 
 ## Performance Tuning
 
-XANA works on any machine. Tune these three variables to match your hardware.
+XANA works on any machine. Tune these variables to match your hardware.
 
 ### The Knobs
 
@@ -227,9 +238,9 @@ XANA works on any machine. Tune these three variables to match your hardware.
 
 ---
 
-### Potato (old laptop, CPU-only, < 8 GB RAM)
+### 🥔 Potato — Old laptop, CPU-only, under 8 GB RAM
 
-Goal: stay responsive, avoid OOM.
+Goal: stay responsive, avoid running out of memory.
 
 **`config.py`:**
 ```python
@@ -254,9 +265,9 @@ def build_context_string(docs, metas, max_chars=1500):
 
 ---
 
-### Mid-Range (modern CPU, 8–16 GB RAM) — Default
+### ⚡ Mid-Range — Modern CPU, 8–16 GB RAM — Default
 
-No changes needed. The defaults are tuned for this tier.
+No changes needed. The defaults are already tuned for this tier.
 
 ```python
 LLM_MODEL       = "llama3.2"        # ~4 GB RAM
@@ -267,7 +278,7 @@ EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
 ---
 
-### Beast (GPU / 16 GB+ VRAM, fast machine)
+### 🔥 Beast — GPU, 16 GB+ VRAM, fast machine
 
 Goal: maximum context richness — longer memory, deeper retrieval.
 
@@ -298,9 +309,9 @@ def build_context_string(docs, metas, max_chars=8000):
 
 | Tier | Model | `n=` | `messages[-N:]` | `max_chars` |
 |---|---|---|---|---|
-| Potato | `llama3.2:1b` | 3 | 2 | 1500 |
-| Mid-range (default) | `llama3.2` | 5 | 4 | 4000 |
-| Beast | `llama3.1:8b`+ | 10 | 8 | 8000 |
+| 🥔 Potato | `llama3.2:1b` | 3 | 2 | 1500 |
+| ⚡ Mid-range (default) | `llama3.2` | 5 | 4 | 4000 |
+| 🔥 Beast | `llama3.1:8b`+ | 10 | 8 | 8000 |
 
 > **Tip:** The embedding model only affects DB build time and search quality — not LLM speed. You can rebuild the DB with a better embedding model anytime by deleting `xana_memory_db/` and re-running `legacy/build-brain.py`.
 
@@ -384,7 +395,7 @@ XANA OS runs entirely on your local machine. No data is sent to external servers
 - Public API requests to the data sources listed above (read-only, no personal data sent)
 - LLM inference via Ollama (runs locally, no data leaves your machine)
 
-Your conversation history and memory database stay on your device.
+Your conversation history and memory database stay on your device. Always.
 
 ---
 
@@ -395,3 +406,17 @@ MIT License — see [LICENSE](LICENSE) for details.
 ---
 
 *XANA OS · PROMETHEUS · ALL SYSTEMS NOMINAL*
+
+(https://freeimage.host/i/qoOhQ1V)
+
+[![qoOhLqQ.md.png](https://iili.io/qoOhLqQ.md.png)](https://freeimage.host/i/qoOhLqQ)
+
+[![qoOhDdP.md.png](https://iili.io/qoOhDdP.md.png)](https://freeimage.host/i/qoOhDdP)
+
+[![qoOjJLv.md.png](https://iili.io/qoOjJLv.md.png)](https://freeimage.host/i/qoOjJLv)
+
+[![qoOjf2I.md.png](https://iili.io/qoOjf2I.md.png)](https://freeimage.host/i/qoOjf2I)
+
+[![qoOjq7t.md.png](https://iili.io/qoOjq7t.md.png)](https://freeimage.host/i/qoOjzQf)
+
+[![qoOjTB4.md.png](https://iili.io/qoOjTB4.md.png)](https://freeimage.host/i/qoOjTB4)
